@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TBWN provides structured XAUUSD signal setups with Entry, Take Profit, Stop Loss and risk planning.">
+  <title>TBWN Signal — Stop Chasing Gold. Start Following a Plan.</title>
+<style>
+:root{--ink:#10110f;--paper:#ebe9df;--soft:#d7d3c5;--acid:#a7c879;--muted:#7b7b70;--line:rgba(16,17,15,.18)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif;font-size:16px;overflow-x:hidden}a{color:inherit;text-decoration:none}.site-header{position:sticky;top:0;z-index:20;height:76px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;background:rgba(235,233,223,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.brand{font-size:19px;font-weight:700;letter-spacing:-.06em}.brand span{font-family:Newsreader,serif;font-weight:400;font-style:italic;margin-left:5px;color:#667b50}.site-header nav{display:flex;gap:30px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}.site-header nav a:hover{opacity:.55}.nav-cta{font:500 11px DM Mono,monospace;text-transform:uppercase;border-bottom:1px solid;padding:9px 0}.section-pad{padding:120px 6vw}.eyebrow,.section-intro>span,.section-intro>div>span,.transparency-copy>span{font:500 11px DM Mono,monospace;letter-spacing:.1em}.eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:58px}.eyebrow i{display:block;width:8px;height:8px;border-radius:50%;background:#718c56;box-shadow:0 0 0 5px rgba(113,140,86,.14)}.hero{min-height:calc(100vh - 76px);display:flex;flex-direction:column;justify-content:center}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:7vw;align-items:end}.hero h1,.section-intro h2,.transparency h2,.closing h2{margin:0;font-size:clamp(52px,6.3vw,104px);line-height:.87;letter-spacing:-.067em;font-weight:700}.hero h1 em,.section-intro h2 em,.closing h2 em{font-family:Newsreader,serif;font-weight:400}.hero-copy>p{max-width:600px;margin:42px 0 32px;font-size:20px;line-height:1.55}.button{display:inline-flex;align-items:center;justify-content:space-between;gap:45px;background:var(--ink);color:var(--paper);padding:17px 19px 17px 22px;font:500 12px DM Mono,monospace;text-transform:uppercase}.button:hover span{transform:translateX(5px)}.button span{transition:.2s}.micro-strip{display:flex;gap:20px;margin-top:55px;font:500 9px DM Mono,monospace;letter-spacing:.05em}.micro-strip span+span:before{content:'/';margin-right:20px;color:#999}.terminal-wrap{background:var(--ink);color:#e8e6dc;border-radius:2px;box-shadow:0 25px 70px rgba(0,0,0,.18)}.terminal-top,.terminal-data{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;font:400 10px DM Mono,monospace;border-bottom:1px solid #2b2d29}.status{color:var(--acid)}.chart{height:300px;position:relative;background:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:100% 50px,70px 100%}.chart svg{position:absolute;inset:15px 0 0;width:100%;height:85%}.chart polyline{fill:none;stroke:var(--acid);stroke-width:2}.chart .area{fill:url(#fade)}.level{position:absolute;right:8px;padding:3px 5px;font:500 8px DM Mono;background:var(--ink);color:#a4a69f}.level:before{content:'';position:absolute;right:100%;top:50%;width:460px;border-top:1px dashed currentColor;opacity:.3}.l1{top:13%;color:var(--acid)}.l2{top:31%;color:var(--acid)}.l3{top:58%}.l4{top:80%;color:#d6856d}.terminal-data{border-top:1px solid #2b2d29;border-bottom:0}.terminal-data div{display:flex;flex-direction:column;gap:5px}.terminal-data small{color:#777b71}.demo-note{padding:11px 18px;background:#1a1c18;color:#777b71;font:400 8px DM Mono}.section-intro{max-width:960px}.section-intro h2{margin-top:35px}.section-intro>p{max-width:510px;font-size:18px;line-height:1.6;margin-top:28px}.receive{border-top:1px solid var(--line)}.receive-grid{display:grid;grid-template-columns:repeat(5,1fr);margin:80px 0 50px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.receive-grid article{padding:24px 22px 50px;border-right:1px solid var(--line)}.receive-grid article:last-child{border:0}.receive-grid b{font:500 12px DM Mono}.receive-grid p{color:#55564f;font-size:13px;line-height:1.6}.text-link{display:inline-flex;gap:34px;border-bottom:1px solid;padding:10px 0;font:500 11px DM Mono;text-transform:uppercase}.proof{background:var(--ink);color:#dfddd3}.horizontal{max-width:none;display:flex;justify-content:space-between;align-items:end}.horizontal>p{max-width:440px;color:#9b9b91;margin:0}.proof-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:7vw;margin-top:85px}.dashboard-card{border:1px solid #34362f;background:#141512}.dash-head,.dash-foot{display:flex;justify-content:space-between;padding:18px;font:400 9px DM Mono;color:#777b71}.dash-head{border-bottom:1px solid #34362f}.dash-chart{height:430px;position:relative;background:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:100% 54px,70px 100%;overflow:hidden}.candle{position:absolute;width:9px;background:#9cab89;bottom:20%;height:26%;box-shadow:0 -25px 0 -4px #9cab89,0 29px 0 -4px #9cab89}.c1{left:10%;height:18%}.c2{left:20%;height:35%;bottom:18%}.c3{left:31%;height:28%;bottom:32%}.c4{left:43%;height:42%;bottom:28%}.c5{left:54%;height:25%;bottom:50%}.c6{left:65%;height:48%;bottom:39%}.c7{left:76%;height:32%;bottom:59%}.c8{left:87%;height:50%;bottom:48%}.entry-line,.tp-line,.sl-line{position:absolute;left:0;right:0;border-top:1px dashed #777;font:400 8px DM Mono;text-align:right;padding-right:10px}.entry-line{top:58%}.tp-line{top:27%;color:var(--acid);border-color:var(--acid)}.sl-line{top:78%;color:#c67562;border-color:#c67562}.dash-foot{border-top:1px solid #34362f}.dash-foot b{color:#bbbdb4}.signal-sheet{position:relative}.demo-badge{display:inline-block;background:#d2ad54;color:#191815;padding:7px 9px;font:500 9px DM Mono}.signal-title{border-bottom:1px solid #34362f;padding:23px 0}.signal-title h3{font-size:42px;margin:0 0 12px}.signal-title span{display:block;color:#7d7f76;font:400 10px DM Mono;line-height:1.7}.signal-sheet dl{margin:0}.signal-sheet dl div{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #292b27}.signal-sheet dt{font:400 10px DM Mono;color:#888a82}.signal-sheet dd{margin:0}.outcome{padding:24px 0 30px}.outcome small{font:400 9px DM Mono;color:#888a82}.outcome p{color:#bbbdb4}.transparency{background:#a6c179;display:grid;grid-template-columns:1fr 1fr;gap:5vw;position:relative;overflow:hidden}.risk-word{font-size:25vw;font-weight:700;line-height:.7;letter-spacing:-.1em;transform:rotate(-90deg) translate(-18%,15%);opacity:.12;white-space:nowrap}.transparency-copy{max-width:630px}.transparency h2{margin:30px 0}.transparency blockquote{font:400 26px/1.35 Newsreader,serif;margin:45px 0;padding-left:25px;border-left:1px solid}.transparency p{line-height:1.7}.button.light{background:var(--paper);color:var(--ink);margin-top:20px}.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:75px;border-top:1px solid var(--line)}.steps article{padding:23px 28px 50px 0;border-right:1px solid var(--line);margin-right:28px}.steps article:last-child{border:0}.steps i{font:400 10px DM Mono;color:#777}.steps h3{margin-top:40px;font-size:16px}.steps p{font-size:13px;line-height:1.6;color:#55564f}.manifesto{margin-top:80px;border-top:1px solid;border-bottom:1px solid;padding:40px 0;font-size:clamp(20px,2.7vw,42px);font-weight:700;letter-spacing:-.04em}.manifesto em{font-family:Newsreader;font-weight:400}.pricing{background:#d6d2c5}.plans{display:grid;grid-template-columns:repeat(3,1fr);margin-top:80px}.plans article{position:relative;border:1px solid var(--ink);padding:38px;min-height:420px;display:flex;flex-direction:column;margin-right:-1px}.plans article>span{font:500 11px DM Mono}.plans h3{font-size:70px;margin:45px 0 0;letter-spacing:-.06em}.plans h3 small{font:400 9px DM Mono;letter-spacing:0}.plans strong{font:400 28px Newsreader}.plans p{color:#55564f}.plans a{margin-top:auto;background:var(--ink);color:var(--paper);padding:16px;font:500 10px DM Mono;text-transform:uppercase}.plans .featured{background:var(--ink);color:var(--paper)}.plans .featured p{color:#aaa}.plans .featured a{background:var(--acid);color:var(--ink)}.value-callout{position:absolute;top:-32px;left:-1px;right:-1px;height:32px;padding:9px;background:var(--acid);color:var(--ink);font:500 9px DM Mono;text-align:center}.closing{text-align:center}.closing>span{font:500 10px DM Mono}.closing h2{margin:35px auto 55px;max-width:1100px;font-size:clamp(46px,6vw,90px)}footer{padding:55px 6vw 35px;background:var(--ink);color:var(--paper);display:grid;grid-template-columns:1fr 2fr 1fr;gap:30px;align-items:start}footer p{margin:0;color:#8e9087;font-size:12px}footer>div{display:flex;flex-direction:column;gap:12px;font:400 9px DM Mono;text-transform:uppercase}footer small{grid-column:1/-1;margin-top:50px;color:#62645d;font:400 9px DM Mono}
+@media(max-width:900px){.site-header nav{display:none}.section-pad{padding:90px 6vw}.hero-grid,.proof-grid,.transparency{grid-template-columns:1fr}.terminal-wrap{margin-top:30px}.receive-grid{grid-template-columns:1fr 1fr}.receive-grid article{border-bottom:1px solid var(--line)}.horizontal{display:block}.horizontal>p{margin-top:30px}.risk-word{display:none}.steps{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr;gap:35px}.plans article{min-height:340px}.value-callout{top:-32px}footer{grid-template-columns:1fr 1fr}}@media(max-width:560px){.hero h1{font-size:48px}.hero-copy>p{font-size:17px}.micro-strip{flex-wrap:wrap}.micro-strip span+span:before{display:none}.chart,.dash-chart{height:250px}.receive-grid,.steps{grid-template-columns:1fr}.receive-grid article,.steps article{border-right:0}.transparency{padding-top:75px}.plans h3{font-size:58px}footer{grid-template-columns:1fr}}
+
+/* Softer professional typography */
+body{font-family:'DM Sans',Arial,sans-serif}
+.brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;letter-spacing:-.04em}
+.brand span{font-family:'DM Sans',sans-serif;font-weight:500;font-style:normal;margin-left:6px}
+.hero h1,.section-intro h2,.transparency h2,.closing h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(44px,5.1vw,78px);line-height:1.02;letter-spacing:-.045em;font-weight:600}
+.hero h1 em,.section-intro h2 em,.closing h2 em{font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;font-style:normal;color:#687d52}
+.hero-copy>p{margin-top:38px;font-size:19px;line-height:1.6}
+.button{border-radius:6px}
+.terminal-wrap{border-radius:10px;overflow:hidden}
+.transparency blockquote{font:500 23px/1.5 'DM Sans',sans-serif}
+.manifesto{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(19px,2.3vw,34px);font-weight:600;letter-spacing:-.025em;line-height:1.35}
+.manifesto em{font-family:'DM Sans',sans-serif;font-weight:400;font-style:normal}
+.plans strong{font:500 27px 'DM Sans',sans-serif}
+@media(max-width:560px){.hero h1{font-size:39px;line-height:1.08}}
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="TBWN home">TBWN<span>signal</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#signal">Real signal</a><a href="#process">How it works</a><a href="#performance">Performance</a>
+    </nav>
+    <a class="nav-cta" href="#plans">View plans</a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad" data-route="main">
+      <div class="eyebrow"><i></i> XAUUSD / STRUCTURED SIGNALS</div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>STOP CHASING GOLD.<br><em>START FOLLOWING A PLAN.</em></h1>
+          <p>Structured XAUUSD signals built around Entry, Take Profit, Stop Loss and risk.</p>
+          <a class="button" href="#process">See how TBWN works <span>→</span></a>
+          <div class="micro-strip"><span>XAUUSD ONLY</span><span>REAL-TIME SIGNALS</span><span>RISK PLANNER</span></div>
+        </div>
+        <div class="terminal-wrap" aria-label="TBWN dashboard preview">
+          <div class="terminal-top"><div><b>TBWN</b> / LIVE SETUP</div><span class="status">● MONITORING</span></div>
+          <div class="chart" aria-hidden="true">
+            <svg viewBox="0 0 700 300" preserveAspectRatio="none">
+              <defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9cca70" stop-opacity=".22"/><stop offset="1" stop-color="#9cca70" stop-opacity="0"/></linearGradient></defs>
+              <path class="area" d="M0 235 L45 230 L75 248 L110 210 L145 218 L180 174 L225 191 L260 150 L290 164 L320 108 L355 128 L390 105 L430 119 L465 74 L500 91 L535 55 L565 79 L600 43 L635 58 L670 24 L700 35 L700 300 L0 300Z"/>
+              <polyline points="0,235 45,230 75,248 110,210 145,218 180,174 225,191 260,150 290,164 320,108 355,128 390,105 430,119 465,74 500,91 535,55 565,79 600,43 635,58 670,24 700,35"/>
+            </svg>
+            <span class="level l1">TP 3</span><span class="level l2">TP 2</span><span class="level l3">ENTRY</span><span class="level l4">SL</span>
+          </div>
+          <div class="terminal-data"><div><small>PAIR</small><b>XAUUSD</b></div><div><small>DIRECTION</small><b>WAIT</b></div><div><small>RISK</small><b>DEFINED</b></div></div>
+          <div class="demo-note">INTERFACE PREVIEW — LIVE VALUES APPEAR INSIDE YOUR DASHBOARD</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="receive section-pad">
+      <div class="section-intro"><span>01 / THE SETUP</span><h2>ONE SIGNAL.<br><em>A COMPLETE SETUP.</em></h2><p>No vague direction. No missing exit. The structure is visible before you decide.</p></div>
+      <div class="receive-grid">
+        <article><b>ENTRY</b><p>Where the setup becomes actionable.</p></article>
+        <article><b>TP1 / TP2 / TP3</b><p>Defined target levels.</p></article>
+        <article><b>STOP LOSS</b><p>Risk defined before entry.</p></article>
+        <article><b>RISK PLANNER</b><p>Plan position sizing around your own risk parameters.</p></article>
+        <article><b>REAL-TIME ALERT</b><p>Know when a new setup is available.</p></article>
+      </div>
+      <a class="text-link" href="#signal">View a real signal <span>↓</span></a>
+    </section>
+
+    <section id="signal" class="proof section-pad" data-route="signal">
+      <div class="section-intro horizontal"><div><span>02 / PRODUCT PROOF</span><h2>SEE TBWN<br><em>IN ACTION.</em></h2></div><p>Don’t take our word for it. Read the plan, inspect the levels, then review the recorded outcome.</p></div>
+      <div class="proof-grid">
+        <div class="dashboard-card">
+          <div class="dash-head"><b>TBWN / SIGNAL DESK</b><span>SETUP ARCHIVE</span></div>
+          <div class="dash-chart"><div class="candle c1"></div><div class="candle c2"></div><div class="candle c3"></div><div class="candle c4"></div><div class="candle c5"></div><div class="candle c6"></div><div class="candle c7"></div><div class="candle c8"></div><div class="entry-line">ENTRY</div><div class="tp-line">TP1</div><div class="sl-line">SL</div></div>
+          <div class="dash-foot"><span>STRUCTURE</span><b>PLAN BEFORE POSITION</b></div>
+        </div>
+        <div class="signal-sheet">
+          <div class="demo-badge">DEMONSTRATION DATA</div>
+          <div class="signal-title"><h3>XAUUSD</h3><span>Signal #DEMO</span><span>Date: Replace with verified record</span></div>
+          <dl><div><dt>ENTRY</dt><dd>—</dd></div><div><dt>STOP LOSS</dt><dd>—</dd></div><div><dt>TP1</dt><dd>—</dd></div><div><dt>TP2</dt><dd>—</dd></div><div><dt>TP3</dt><dd>—</dd></div></dl>
+          <div class="outcome"><small>WHAT HAPPENED?</small><p>Verified outcome will appear here — including losses.</p></div>
+          <a class="text-link" id="performance" href="#transparency">View performance history <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="transparency" class="transparency section-pad">
+      <div class="risk-word">RISK</div>
+      <div class="transparency-copy"><span>03 / TRANSPARENCY</span><h2>NOT EVERY<br>TRADE WINS.</h2><blockquote>“A trading tool earns trust by showing the full record—not just the comfortable parts.”</blockquote><p>Trading involves risk. TBWN does not promise profits or eliminate losses. Our purpose is to provide structured XAUUSD setups with defined Entry, TP and SL levels.</p><p>You remain responsible for your trading decisions and risk.</p><a class="button light" href="#performance">View our performance <span>→</span></a></div>
+    </section>
+
+    <section id="process" class="process section-pad" data-route="how">
+      <div class="section-intro"><span>04 / THE WORKFLOW</span><h2>FOUR STEPS.<br><em>NO THEATRE.</em></h2></div>
+      <div class="steps">
+        <article><i>01</i><h3>SIGNAL ARRIVES</h3><p>XAUUSD setup becomes available.</p></article>
+        <article><i>02</i><h3>REVIEW THE PLAN</h3><p>Entry. TP. SL. Risk.</p></article>
+        <article><i>03</i><h3>YOU DECIDE</h3><p>Review the setup and decide whether it fits your own trading plan.</p></article>
+        <article><i>04</i><h3>TRACK THE OUTCOME</h3><p>Results are recorded transparently.</p></article>
+      </div>
+      <div class="manifesto">HERE’S THE STRUCTURED SETUP. <em>YOU DECIDE WHETHER TO EXECUTE IT.</em></div>
+    </section>
+
+    <section id="plans" class="pricing section-pad">
+      <div class="section-intro horizontal"><div><span>05 / ACCESS</span><h2>CHOOSE YOUR<br><em>TRADING WINDOW.</em></h2></div><p>Start with the time you need. Every plan gives you the same disciplined TBWN workflow.</p></div>
+      <div class="plans">
+        <article><span>EMERALD</span><h3>5 <small>TRADING DAYS</small></h3><strong>$99</strong><p>Experience the TBWN workflow.</p><a href="#contact">Start 5 days →</a></article>
+        <article><span>SAPPHIRE</span><h3>10 <small>TRADING DAYS</small></h3><strong>$199</strong><p>Extended access.</p><a href="#contact">Start 10 days →</a></article>
+        <article class="featured"><div class="value-callout">12 MORE TRADING DAYS FOR $50 MORE</div><span>DIAMOND</span><h3>22 <small>TRADING DAYS</small></h3><strong>$249</strong><p>Full trading-month access.</p><a href="#contact">Start 22 days →</a></article>
+      </div>
+    </section>
+
+    <section id="contact" class="closing section-pad"><span>TBWN SIGNAL</span><h2>THE MARKET CAN MOVE FAST.<br><em>YOUR DECISION DOESN’T HAVE TO BE RUSHED.</em></h2><a class="button" href="mailto:hello@tbwnsignal.com">Talk to TBWN <span>→</span></a></section>
+  </main>
+  <footer><a class="brand" href="#top">TBWN<span>signal</span></a><p>Structured XAUUSD setups. You make the decision.</p><div><a href="#transparency">Risk disclosure</a><a href="#performance">Performance</a><a href="mailto:hello@tbwnsignal.com">Contact</a></div><small>© 2026 TBWN Signal. Trading involves risk.</small></footer>
+  <script>
+const route = new URLSearchParams(location.search).get('from');
+const targets = { wouldyouenter: '#signal', indicator: '#process', proof: '#signal', planfirst: '#process' };
+if (targets[route]) requestAnimationFrame(() => document.querySelector(targets[route])?.scrollIntoView());
+
+const reveal = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) { entry.target.classList.add('seen'); reveal.unobserve(entry.target); }
+  });
+}, { threshold: .12 });
+document.querySelectorAll('section').forEach((section) => reveal.observe(section));
+
+  </script>
+</body>
+</html>
