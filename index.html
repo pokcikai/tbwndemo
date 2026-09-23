@@ -83,6 +83,12 @@ body{background:var(--paper);color:#efece3}
 .plans .featured a{background:#d4a843;color:#17150f}
 .value-callout{background:#d4a843;color:#17150f}
 .plans strong{color:#d8b45c}
+/* hero shots */
+.hero-shots{display:flex;align-items:flex-end;justify-content:center}
+.hero-shots img{filter:drop-shadow(0 34px 70px rgba(0,0,0,.72))}
+.hero-shots img.a{height:470px}
+.hero-shots img.b{height:410px;margin-left:-78px;margin-bottom:20px}
+@media(max-width:900px){.hero-shots{margin-top:46px}.hero-shots img.a{height:330px}.hero-shots img.b{height:290px;margin-left:-58px}}
 /* product shots */
 .shots{display:grid;grid-template-columns:1.05fr .95fr;gap:6vw;align-items:center;margin-top:80px}
 .shots-phones{display:flex;align-items:flex-end;justify-content:center}
@@ -127,18 +133,9 @@ footer{background:#0a0a0a;color:#efece3;border-top:1px solid var(--line)}
           <a class="button" href="#process">See how TBWN works <span>→</span></a>
           <div class="micro-strip"><span>XAUUSD ONLY</span><span>REAL-TIME SIGNALS</span><span>RISK PLANNER</span></div>
         </div>
-        <div class="terminal-wrap" aria-label="TBWN dashboard preview">
-          <div class="terminal-top"><div><b>TBWN</b> / LIVE SETUP</div><span class="status">● MONITORING</span></div>
-          <div class="chart" aria-hidden="true">
-            <svg viewBox="0 0 700 300" preserveAspectRatio="none">
-              <defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9cca70" stop-opacity=".22"/><stop offset="1" stop-color="#9cca70" stop-opacity="0"/></linearGradient></defs>
-              <path class="area" d="M0 235 L45 230 L75 248 L110 210 L145 218 L180 174 L225 191 L260 150 L290 164 L320 108 L355 128 L390 105 L430 119 L465 74 L500 91 L535 55 L565 79 L600 43 L635 58 L670 24 L700 35 L700 300 L0 300Z"/>
-              <polyline points="0,235 45,230 75,248 110,210 145,218 180,174 225,191 260,150 290,164 320,108 355,128 390,105 430,119 465,74 500,91 535,55 565,79 600,43 635,58 670,24 700,35"/>
-            </svg>
-            <span class="level l1">TP 3</span><span class="level l2">TP 2</span><span class="level l3">ENTRY</span><span class="level l4">SL</span>
-          </div>
-          <div class="terminal-data"><div><small>PAIR</small><b>XAUUSD</b></div><div><small>DIRECTION</small><b>WAIT</b></div><div><small>RISK</small><b>DEFINED</b></div></div>
-          <div class="demo-note">INTERFACE PREVIEW — LIVE VALUES APPEAR INSIDE YOUR DASHBOARD</div>
+        <div class="hero-shots" aria-label="TBWN dashboard on a phone">
+          <img class="a" src="assets/phone-signal-angle.webp" alt="TBWN signal screen on a phone">
+          <img class="b" src="assets/phone-signal-front.webp" alt="TBWN signal screen: entry, stop loss and three take-profits">
         </div>
       </div>
     </section>
