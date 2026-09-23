@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta name="description" content="TBWN Signal membership for customers introduced by a TBWN partner or representative.">
+  <meta name="description" content="TBWN Signal membership for customers introduced by a TBWN partner or representative — join with their referral code.">
   <title>Membership — TBWN Signal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,16 +53,16 @@
     <div class="page-head">
       <div>
         <div class="eyebrow"><i></i> MEMBERSHIP / PARTNERS &amp; REPRESENTATIVES</div>
-        <h1>JOIN THROUGH<br><em>YOUR REPRESENTATIVE.</em></h1>
+        <h1>JOIN THROUGH<br><em>TBWN REPRESENTATIVE.</em></h1>
       </div>
-      <p>For customers introduced by a TBWN partner or representative. Enter their code with your details — we verify it, then email your access key.</p>
+      <p>For customers introduced by a TBWN partner or representative. Please enter their referral code, fill in your details — once verified, access key will be sent to your email.</p>
     </div>
 
     <section id="apply" class="apply">
       <form class="card" id="form">
         <div class="steps-mini"><b>01 YOUR DETAILS</b> <span>·</span> <span id="s2">02 VERIFY EMAIL</span> <span>·</span> <span id="s3">03 KEY BY EMAIL</span></div>
         <h2>Your application</h2>
-        <p>Every application is checked against the representative named by the code.</p>
+        <p>Every application is checked against the representative named by the referral code.</p>
 
         <div class="two">
           <div class="field"><label for="name">Full name</label><input id="name" placeholder="Your full name" autocomplete="name"></div>
@@ -87,9 +87,9 @@
 
         <div class="code-field">
           <div class="field">
-            <label for="code">Representative code</label>
+            <label for="code">Referral code</label>
             <input id="code" placeholder="TBWN-XXXX" autocomplete="off" spellcheck="false">
-            <small class="hint">The code your partner or representative gave you. It tells us who introduced you, and it is how your account stays credited to them.</small>
+            <small class="hint">The referral code your partner or representative gave you. It tells us who introduced you, and it is how your account stays credited to them.</small>
           </div>
         </div>
 
@@ -101,7 +101,7 @@
         <div class="terms">
           <h3>What happens next</h3>
           <ul>
-            <li><b>We check the code.</b> The application goes to the representative it names before a key is issued.</li>
+            <li><b>We check the referral code.</b> The application goes to the representative it names before a key is issued.</li>
             <li><b>Your key arrives by email.</b> At the address you verified — usually within a working day.</li>
             <li><b>Same dashboard.</b> A membership key opens the identical console a paid key opens — no reduced version.</li>
           </ul>
@@ -117,7 +117,7 @@
     <section id="done" class="done" hidden>
       <span>APPLICATION RECEIVED</span>
       <h2>We have your details.</h2>
-      <p>We check the representative code first — usually within a working day. Your access key arrives at the email you verified, and that same email is the one you use to recover the key later.</p>
+      <p>We check the referral code first — usually within a working day. Your access key arrives at the email you verified, and that same email is the one you use to recover the key later.</p>
       <div class="inline-links"><a href="../access/">Go to the log-in page →</a><a href="#" id="again">Fill the form again</a></div>
     </section>
   </main>
@@ -140,7 +140,7 @@ const done = document.getElementById('done');
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
   if (!document.getElementById('code').value.trim()) {
-    document.getElementById('msg').textContent = 'Enter the code your representative gave you.';
+    document.getElementById('msg').textContent = 'Enter the referral code your representative gave you.';
     document.getElementById('code').focus();
     return;
   }
