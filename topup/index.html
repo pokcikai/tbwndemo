@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Top up akses TBWN untuk account holder Brunei Darussalam.">
+  <title>Top Up Access — TBWN Signal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Newsreader:ital@0;1&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="../assets/site.css">
+<style>
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+.tier{text-align:left;border:1px solid var(--line);border-radius:10px;padding:22px 20px 24px;background:transparent;color:#efece3;cursor:pointer;transition:border-color .16s ease,background .16s ease}
+.tier:hover{border-color:rgba(212,168,67,.55)}
+.tier[aria-pressed=true]{border-color:#d4a843;background:rgba(212,168,67,.08)}
+.tier b{display:block;font:500 10px DM Mono,monospace;letter-spacing:.1em;color:#a9aba1}
+.tier strong{display:block;margin-top:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:600;letter-spacing:-.045em}
+.tier[aria-pressed=true] strong{color:#d8b45c}
+.tier small{display:block;margin-top:8px;font:400 12px DM Mono,monospace;color:#9b9d93}
+.topup{display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;margin-top:44px;align-items:start}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bill{border:1px solid var(--line);border-radius:10px;padding:26px 24px;background:#111110;position:sticky;top:96px}
+.bill>span{font:500 10px DM Mono,monospace;letter-spacing:.1em;color:#a9aba1}
+.bill div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.bill dt{font:500 10px DM Mono,monospace;letter-spacing:.1em;color:#a9aba1}
+.bill dd{margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.bill .total{border-bottom:0;padding-top:20px}
+.bill .total dd{font-size:34px;color:#d8b45c}
+.bill dl{margin:22px 0 0}
+.rate{margin-top:18px;font-size:12.5px;line-height:1.7;color:#9b9d93}
+.brunei{display:flex;gap:11px;align-items:flex-start;margin-top:26px;border:1px solid rgba(212,168,67,.4);background:rgba(212,168,67,.07);border-radius:8px;padding:15px 17px}
+.brunei b{font:500 10px DM Mono,monospace;letter-spacing:.08em;color:#e2bf72;white-space:nowrap}
+.brunei span{font-size:13px;line-height:1.6;color:#c9cbc2}
+.done{border:1px solid rgba(61,220,151,.45);background:rgba(61,220,151,.07);border-radius:10px;padding:34px 30px}
+.done>span{font:500 10px DM Mono,monospace;letter-spacing:.1em;color:#3ddc97}
+.done h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:30px;letter-spacing:-.04em;font-weight:600;margin:14px 0 4px}
+.done p{color:#c9cbc2;line-height:1.7;max-width:580px}
+@media(max-width:900px){.tiers{grid-template-columns:1fr 1fr}.topup{grid-template-columns:1fr;gap:34px}.bill{position:static}.two{grid-template-columns:1fr}}
+@media(max-width:600px){.tier{padding:18px 16px 20px}.tier strong{font-size:27px}.bill{padding:22px 18px}.bill .total dd{font-size:29px}.tiers{margin-top:46px;gap:12px}}
+</style>
+</head>
+<body>
+  <div class="demo-strip"><b>DEMO</b> <span>Paparan reka bentuk sahaja — tiada bayaran diambil.</span></div>
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="TBWN home"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a>
+    <nav aria-label="Main navigation">
+      <a href="../#signal">Real signal</a><a href="../#process">How it works</a><a href="../membership/">Membership</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-cta" href="../#plans">View plans</a>
+      <a class="nav-login" href="../access/">Log in</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow"><i></i> TBWN SOLUTIONS / TOP UP</div>
+        <h1>TOP UP<br><em>ACCESS.</em></h1>
+      </div>
+      <p>Khusus untuk account holder <b>Brunei Darussalam</b>. Pilih jumlah, isi maklumat, bayar dengan kad — akses diaktifkan selepas pembayaran disahkan.</p>
+    </div>
+
+    <section id="order">
+      <div class="tiers" role="group" aria-label="Pilih jumlah top up">
+        <button class="tier" type="button" data-tier="t20"  data-amount="20"  data-days="7"  aria-pressed="false"><b>PILIHAN 01</b><strong>USD 20</strong><small>7 hari akses</small></button>
+        <button class="tier" type="button" data-tier="t50"  data-amount="50"  data-days="14" aria-pressed="true"><b>PILIHAN 02</b><strong>USD 50</strong><small>14 hari akses</small></button>
+        <button class="tier" type="button" data-tier="t100" data-amount="100" data-days="30" aria-pressed="false"><b>PILIHAN 03</b><strong>USD 100</strong><small>30 hari akses</small></button>
+        <button class="tier" type="button" data-tier="custom" aria-pressed="false"><b>CUSTOM</b><strong>Sendiri</strong><small>jumlah &amp; hari anda</small></button>
+      </div>
+
+      <div class="topup">
+        <form class="card" id="form">
+          <h2>Maklumat anda</h2>
+          <p>Semua medan diperlukan. Kami hubungi melalui WhatsApp untuk pengesahan.</p>
+
+          <div class="two" id="customFields" hidden>
+            <div class="field"><label for="amt">Jumlah (USD)</label><input class="mono" id="amt" type="number" min="1" placeholder="cth 75"></div>
+            <div class="field"><label for="days">Hari akses</label><input class="mono" id="days" type="number" min="1" placeholder="cth 21"></div>
+          </div>
+
+          <div class="two">
+            <div class="field"><label for="name">Nama penuh</label><input id="name" placeholder="Nama penuh" autocomplete="name"></div>
+            <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="anda@email.com" autocomplete="email"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label for="tv">TradingView username</label><input id="tv" placeholder="@username"></div>
+            <div class="field"><label for="mt5">Nombor MT4/5</label><input class="mono" id="mt5" placeholder="cth 123456"></div>
+          </div>
+          <div class="field">
+            <label for="phone">Nombor telefon (WhatsApp)</label>
+            <input class="mono" id="phone" placeholder="cth 8988730" inputmode="tel">
+            <small class="hint">Nombor Brunei sahaja — untuk pengesahan melalui WhatsApp.</small>
+          </div>
+
+          <button class="btn-gold" type="submit">Teruskan ke pembayaran <span>→</span></button>
+          <p class="note" id="msg">Tiada bayaran diambil — ini paparan reka bentuk.</p>
+        </form>
+
+        <aside class="bill">
+          <span>RINGKASAN</span>
+          <dl>
+            <div><dt>PAKEJ</dt><dd id="pkg">USD 50</dd></div>
+            <div><dt>HARI AKSES</dt><dd id="pkgDays">14 hari</dd></div>
+            <div><dt>CAJ PERKHIDMATAN</dt><dd id="fee">USD 12.00</dd></div>
+            <div class="total"><dt>ANDA AKAN DICAJ</dt><dd id="total">USD 62.00</dd></div>
+          </dl>
+          <p class="rate">Anggaran <b id="bnd">BND 93</b> pada kadar 1 USD ≈ 1.5 BND. Caj sebenar dalam USD, tertakluk kadar pertukaran harian bank anda.</p>
+          <div class="brunei"><b>BRUNEI SAHAJA</b><span>Top up ini untuk account holder Brunei Darussalam. Untuk pakej signal biasa, guna halaman pakej.</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="done" class="done" hidden>
+      <span>PERMOHONAN DITERIMA</span>
+      <h2>Kami dah terima pesanan anda.</h2>
+      <p>Selepas pembayaran disahkan, akses diaktifkan dan kami hantar pengesahan ke email anda. Kalau ada apa-apa perlu disemak, kami WhatsApp nombor yang anda beri.</p>
+      <div class="inline-links"><a href="../">Kembali ke laman utama →</a><a href="#" id="again">Buat pesanan lain</a></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="../"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a><p>Structured XAUUSD setups. You make the decision.</p><div><a href="../#transparency">Risk disclosure</a><a href="../membership/">Membership</a><a href="./">Top up (Brunei)</a><a href="../access/">Member log in</a><a href="mailto:hello@tbwnsignal.com">Contact</a></div><small>© 2026 TBWN Signal. Trading involves risk.</small></footer>
+
+<script>
+// Charge = base × 1.24 (Stripe fees + FX + operations), the same rate the live
+// checkout uses. The BND figure is an estimate at 1 USD ≈ 1.5 BND; the card is
+// always charged in USD.
+const MARKUP = 1.24;
+const USD_TO_BND = 1.5;
+const usd = (n) => 'USD ' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+const tiers = document.querySelectorAll('.tier');
+const customFields = document.getElementById('customFields');
+let tier = 't50';
+
+const readOrder = () => {
+  if (tier === 'custom') {
+    return { amount: Number(document.getElementById('amt').value) || 0, days: Math.round(Number(document.getElementById('days').value) || 0) };
+  }
+  const btn = document.querySelector('.tier[data-tier="' + tier + '"]');
+  return { amount: Number(btn.dataset.amount), days: Number(btn.dataset.days) };
+};
+
+const render = () => {
+  const { amount, days } = readOrder();
+  const fee = amount * (MARKUP - 1);
+  const total = amount * MARKUP;
+  document.getElementById('pkg').textContent = amount ? usd(amount) : '—';
+  document.getElementById('pkgDays').textContent = days ? days + ' hari' : '—';
+  document.getElementById('fee').textContent = amount ? usd(fee) : '—';
+  document.getElementById('total').textContent = amount ? usd(total) : '—';
+  document.getElementById('bnd').textContent = 'BND ' + Math.round(total * USD_TO_BND);
+};
+
+tiers.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    tier = btn.dataset.tier;
+    tiers.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    customFields.hidden = tier !== 'custom';
+    if (tier === 'custom') document.getElementById('amt').focus();
+    render();
+  });
+});
+document.getElementById('amt').addEventListener('input', render);
+document.getElementById('days').addEventListener('input', render);
+render();
+
+const order = document.getElementById('order');
+const done = document.getElementById('done');
+document.getElementById('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const { amount, days } = readOrder();
+  if (!amount || !days) { document.getElementById('msg').textContent = 'Masukkan jumlah (min USD 1) & bilangan hari yang sah.'; return; }
+  order.hidden = true; done.hidden = false; window.scrollTo({ top: 0 });
+});
+document.getElementById('again').addEventListener('click', (e) => { e.preventDefault(); done.hidden = true; order.hidden = false; });
+</script>
+</body>
+</html>
