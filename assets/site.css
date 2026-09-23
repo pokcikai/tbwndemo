@@ -142,3 +142,32 @@ footer{background:#0a0a0a;color:#efece3;border-top:1px solid var(--line)}
 .demo-strip b{background:#d4a843;color:#17150f;padding:4px 7px;border-radius:3px}
 .demo-strip span{color:#a9aba1;text-transform:none;letter-spacing:0;font-family:'DM Sans',sans-serif;font-size:12px}
 @media(max-width:900px){.page{padding:60px 6vw 90px}.page-head{grid-template-columns:1fr;gap:28px;padding-bottom:38px}.card{padding:24px}.demo-strip{flex-wrap:wrap;gap:8px}}
+
+/* ── mobile pass ────────────────────────────────────────────────────────────
+   Three things the desktop layout hid: the ledger's numbers forced their grid
+   track wider than the screen, the mono labels sat at 9–10px, and the footer
+   and inline links were 12–17px tall — smaller than a fingertip. */
+@media(max-width:600px){
+  .record-grid{grid-template-columns:1fr 1fr}
+  .record-grid article{min-width:0;padding:20px 16px 30px}
+  .record-grid strong{font-size:28px}
+  .record-grid b{font-size:10px}
+  .record-grid small{font-size:11px}
+  .record-note{font-size:13px}
+
+  .eyebrow,.section-intro>span,.section-intro>div>span,.transparency-copy>span,
+  .micro-strip,.demo-badge,.steps i,.plans article>span,.plans a,.value-callout,
+  .field label,.inline-links,.nav-cta,.nav-login,.text-link,.btn-gold,.btn-ghost,
+  .demo-strip,footer>div{font-size:11px}
+  .field .hint,.note{font-size:12.5px}
+
+  footer>div a{display:block;padding:9px 0}
+  footer small{font-size:10px}
+  .inline-links{gap:18px}
+  .inline-links a{padding:9px 0}
+  .nav-login{padding:11px 16px}
+  .text-link{padding:13px 0}
+  .plans h3 small{font-size:10px}
+  .site-header .brand{padding:8px 0}
+  .page{padding:54px 6vw 84px}
+}
