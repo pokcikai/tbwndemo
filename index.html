@@ -24,11 +24,93 @@ body{font-family:'DM Sans',Arial,sans-serif}
 .plans strong{font:500 27px 'DM Sans',sans-serif}
 @media(max-width:560px){.hero h1{font-size:39px;line-height:1.08}}
 
+/* ── TBWN theme ──────────────────────────────────────────────────────────────
+   Snid's layout and voice, TBWN's colours. The reference ran cream + olive on
+   a light ground; TBWN is black, gold and chrome, so the page is inverted:
+   dark ground, one light interlude, one gold block. Structure untouched. */
+:root{
+  --paper:#0e0e0e;           /* the ground */
+  --ink:#efece3;             /* inverted blocks + buttons */
+  --soft:#1a1a19;
+  --acid:#d4a843;            /* gold replaces the olive accent */
+  --muted:#8e9087;
+  --line:rgba(239,236,227,.16);
+}
+body{background:var(--paper);color:#efece3}
+.site-header{background:rgba(14,14,14,.9);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px}
+.brand img{height:26px;width:auto;display:block}
+.brand span{color:#d4a843;font-family:'DM Sans',sans-serif;font-style:normal;font-weight:500}
+.eyebrow i{background:#d4a843;box-shadow:0 0 0 5px rgba(212,168,67,.16)}
+.hero h1 em,.section-intro h2 em,.closing h2 em{color:#d8b45c}
+.hero-copy>p,.section-intro>p{color:#a9aba3}
+.button{background:var(--ink);color:#12120f}
+.button.gold{background:#d4a843;color:#12120f}
+.micro-strip{color:#8e9087}
+.terminal-wrap{background:#000;box-shadow:0 25px 70px rgba(0,0,0,.6);border:1px solid #23231f}
+.chart polyline{stroke:#d4a843}
+.level.l1,.level.l2{color:#d4a843}
+.receive-grid article p,.steps p{color:#96988f}
+.receive-grid,.receive-grid article,.steps,.steps article{border-color:var(--line)}
+/* the one light interlude */
+.proof{background:#efece3;color:#16160f}
+.proof .section-intro h2 em{color:#8a6a18}
+.proof .horizontal>p{color:#55564f}
+.proof .shots-copy li{border-color:rgba(20,20,15,.16);color:#3f4038}
+.proof .shots-copy h3,.proof .tablet-shot h3{color:#16160f}
+.proof .text-link{color:#16160f}
+.proof .signal-title h3{color:#16160f}
+.dashboard-card{background:#0d0d0c;border-color:#26261f}
+.candle{background:#d4a843;box-shadow:0 -25px 0 -4px #d4a843,0 29px 0 -4px #d4a843}
+.tp-line{color:#d4a843;border-color:#d4a843}
+.demo-badge{background:#d4a843;color:#17150f}
+.signal-title h3{color:#efece3}
+.text-link{color:inherit}
+/* the accent block */
+.transparency{background:#d4a843;color:#15140f}
+.transparency blockquote,.transparency p{color:#221f16}
+.transparency h2 em{color:#3a3116}
+.button.light{background:#12120f;color:#efece3}
+.manifesto{border-color:var(--line)}
+.manifesto em{color:#d8b45c}
+/* pricing band */
+.pricing{background:#151517}
+.plans article{border-color:var(--line)}
+.plans p{color:#96988f}
+.plans a{background:var(--ink);color:#12120f}
+.plans .featured{background:#efece3;color:#16160f}
+.plans .featured p{color:#55564f}
+.plans .featured a{background:#d4a843;color:#17150f}
+.value-callout{background:#d4a843;color:#17150f}
+.plans strong{color:#d8b45c}
+/* product shots */
+.shots{display:grid;grid-template-columns:1.05fr .95fr;gap:6vw;align-items:center;margin-top:80px}
+.shots-phones{display:flex;align-items:flex-end;justify-content:center}
+.shots-phones img{filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+.shots-phones img.a{height:440px}
+.shots-phones img.b{height:390px;margin-left:-70px;margin-bottom:18px}
+.shots-copy h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,3vw,44px);letter-spacing:-.04em;margin:18px 0 0}
+.shots-copy ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
+.shots-copy li{border-top:1px solid var(--line);padding-top:10px;font-size:14px;color:#a9aba3}
+.tablet-shot{margin-top:70px;border-top:1px solid var(--line);padding-top:60px;text-align:center}
+.tablet-shot img{width:100%;max-width:980px;filter:drop-shadow(0 30px 70px rgba(0,0,0,.6))}
+/* the record */
+.record-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:70px}
+.record-grid article{padding:26px 22px 44px;border-right:1px solid var(--line)}
+.record-grid article:last-child{border-right:0}
+.record-grid b{display:block;font:500 11px DM Mono,monospace;color:#8e9087;letter-spacing:.1em}
+.record-grid strong{display:block;margin-top:14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:600;letter-spacing:-.04em;color:#efece3}
+.record-grid strong.gold{color:#d8b45c}
+.record-grid small{display:block;margin-top:10px;font-size:12px;color:#7d7f76;line-height:1.6}
+.record-note{margin-top:26px;font-size:12px;color:#7d7f76;line-height:1.7;max-width:760px}
+footer{background:#0a0a0a;color:#efece3;border-top:1px solid var(--line)}
+@media(max-width:900px){.shots{grid-template-columns:1fr}.record-grid{grid-template-columns:repeat(2,1fr)}.record-grid article:nth-child(2){border-right:0}.shots-phones img.a{height:330px}.shots-phones img.b{height:290px;margin-left:-56px}}
+
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="TBWN home">TBWN<span>signal</span></a>
+    <a class="brand" href="#top" aria-label="TBWN home"><img src="assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a>
     <nav aria-label="Main navigation">
       <a href="#signal">Real signal</a><a href="#process">How it works</a><a href="#performance">Performance</a>
     </nav>
@@ -75,29 +157,49 @@ body{font-family:'DM Sans',Arial,sans-serif}
 
     <section id="signal" class="proof section-pad" data-route="signal">
       <div class="section-intro horizontal"><div><span>02 / PRODUCT PROOF</span><h2>SEE TBWN<br><em>IN ACTION.</em></h2></div><p>Don’t take our word for it. Read the plan, inspect the levels, then review the recorded outcome.</p></div>
-      <div class="proof-grid">
-        <div class="dashboard-card">
-          <div class="dash-head"><b>TBWN / SIGNAL DESK</b><span>SETUP ARCHIVE</span></div>
-          <div class="dash-chart"><div class="candle c1"></div><div class="candle c2"></div><div class="candle c3"></div><div class="candle c4"></div><div class="candle c5"></div><div class="candle c6"></div><div class="candle c7"></div><div class="candle c8"></div><div class="entry-line">ENTRY</div><div class="tp-line">TP1</div><div class="sl-line">SL</div></div>
-          <div class="dash-foot"><span>STRUCTURE</span><b>PLAN BEFORE POSITION</b></div>
+      <div class="shots">
+        <div class="shots-phones">
+          <img class="a" src="assets/phone-signal-angle.webp" alt="TBWN signal screen on a phone">
+          <img class="b" src="assets/phone-signal-front.webp" alt="TBWN signal screen: entry, stop loss and three take-profits">
         </div>
-        <div class="signal-sheet">
-          <div class="demo-badge">DEMONSTRATION DATA</div>
-          <div class="signal-title"><h3>XAUUSD</h3><span>Signal #DEMO</span><span>Date: Replace with verified record</span></div>
-          <dl><div><dt>ENTRY</dt><dd>—</dd></div><div><dt>STOP LOSS</dt><dd>—</dd></div><div><dt>TP1</dt><dd>—</dd></div><div><dt>TP2</dt><dd>—</dd></div><div><dt>TP3</dt><dd>—</dd></div></dl>
-          <div class="outcome"><small>WHAT HAPPENED?</small><p>Verified outcome will appear here — including losses.</p></div>
-          <a class="text-link" id="performance" href="#transparency">View performance history <span>→</span></a>
+        <div class="shots-copy">
+          <span class="demo-badge">THE DASHBOARD</span>
+          <h3>Every call arrives complete.</h3>
+          <ul>
+            <li>Direction, entry, stop loss and TP1–TP3 on every signal</li>
+            <li>Live price and running pips while the trade breathes</li>
+            <li>Scalping and intraday, on market days</li>
+            <li>Tap any level to copy it into your platform</li>
+          </ul>
+          <a class="text-link" href="#plans" style="margin-top:28px">Choose a trading window <span>→</span></a>
         </div>
       </div>
+
+      <div class="tablet-shot">
+        <span class="demo-badge">LOT SIZE PLANNER</span>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(26px,2.6vw,38px);letter-spacing:-.04em;margin:16px 0 30px">Your risk, already calculated.</h3>
+        <img src="assets/tablet-planner.webp" alt="TBWN dashboard on a tablet: live signal beside the lot size planner">
+      </div>
+    </section>
+
+    <section class="receive section-pad">
+      <div class="section-intro"><span>03 / THE RECORD</span><h2>THE FULL LEDGER.<br><em>LOSSES INCLUDED.</em></h2><p>Every signal TBWN has published since June 2026 — counted the same way, whatever the outcome.</p></div>
+      <div class="record-grid">
+        <article><b>WIN RATE</b><strong>95.9%</strong><small>reached a take-profit or closed at break-even</small></article>
+        <article><b>TOTAL PIPS</b><strong class="gold">+155,405</strong><small>break-even counted at 80% of peak</small></article>
+        <article><b>SIGNALS</b><strong>3,766</strong><small>since 12 June 2026</small></article>
+        <article><b>STOPPED OUT</b><strong>128</strong><small>signals that hit the stop loss</small></article>
+      </div>
+      <p class="record-note">Of 3,766 signals, 641 reached a take-profit, 2,359 closed at break-even and 128 hit the stop. 638 expired without an entry and count neither way. Past results are not a promise of future ones, and every trade is placed by you.</p>
     </section>
 
     <section id="transparency" class="transparency section-pad">
       <div class="risk-word">RISK</div>
-      <div class="transparency-copy"><span>03 / TRANSPARENCY</span><h2>NOT EVERY<br>TRADE WINS.</h2><blockquote>“A trading tool earns trust by showing the full record—not just the comfortable parts.”</blockquote><p>Trading involves risk. TBWN does not promise profits or eliminate losses. Our purpose is to provide structured XAUUSD setups with defined Entry, TP and SL levels.</p><p>You remain responsible for your trading decisions and risk.</p><a class="button light" href="#performance">View our performance <span>→</span></a></div>
+      <div class="transparency-copy"><span>04 / TRANSPARENCY</span><h2>NOT EVERY<br>TRADE WINS.</h2><blockquote>“A trading tool earns trust by showing the full record—not just the comfortable parts.”</blockquote><p>Trading involves risk. TBWN does not promise profits or eliminate losses. Our purpose is to provide structured XAUUSD setups with defined Entry, TP and SL levels.</p><p>You remain responsible for your trading decisions and risk.</p><a class="button light" href="#performance">View our performance <span>→</span></a></div>
     </section>
 
     <section id="process" class="process section-pad" data-route="how">
-      <div class="section-intro"><span>04 / THE WORKFLOW</span><h2>FOUR STEPS.<br><em>NO THEATRE.</em></h2></div>
+      <div class="section-intro"><span>05 / THE WORKFLOW</span><h2>FOUR STEPS.<br><em>NO THEATRE.</em></h2></div>
       <div class="steps">
         <article><i>01</i><h3>SIGNAL ARRIVES</h3><p>XAUUSD setup becomes available.</p></article>
         <article><i>02</i><h3>REVIEW THE PLAN</h3><p>Entry. TP. SL. Risk.</p></article>
@@ -108,17 +210,17 @@ body{font-family:'DM Sans',Arial,sans-serif}
     </section>
 
     <section id="plans" class="pricing section-pad">
-      <div class="section-intro horizontal"><div><span>05 / ACCESS</span><h2>CHOOSE YOUR<br><em>TRADING WINDOW.</em></h2></div><p>Start with the time you need. Every plan gives you the same disciplined TBWN workflow.</p></div>
+      <div class="section-intro horizontal"><div><span>06 / ACCESS</span><h2>CHOOSE YOUR<br><em>TRADING WINDOW.</em></h2></div><p>Start with the time you need. Every plan gives you the same disciplined TBWN workflow.</p></div>
       <div class="plans">
-        <article><span>EMERALD</span><h3>5 <small>TRADING DAYS</small></h3><strong>$99</strong><p>Experience the TBWN workflow.</p><a href="#contact">Start 5 days →</a></article>
-        <article><span>SAPPHIRE</span><h3>10 <small>TRADING DAYS</small></h3><strong>$199</strong><p>Extended access.</p><a href="#contact">Start 10 days →</a></article>
-        <article class="featured"><div class="value-callout">12 MORE TRADING DAYS FOR $50 MORE</div><span>DIAMOND</span><h3>22 <small>TRADING DAYS</small></h3><strong>$249</strong><p>Full trading-month access.</p><a href="#contact">Start 22 days →</a></article>
+        <article><span>EMERALD</span><h3>5 <small>TRADING DAYS</small></h3><strong>$17 <small style="font:400 12px DM Mono,monospace;color:#7d7f76;text-decoration:line-through">$34</small></strong><p>7 calendar days. Experience the TBWN workflow.</p><a href="https://tbwnsignal.my/#pricing">Start 5 days →</a></article>
+        <article><span>SAPPHIRE</span><h3>10 <small>TRADING DAYS</small></h3><strong>$33 <small style="font:400 12px DM Mono,monospace;color:#7d7f76;text-decoration:line-through">$66</small></strong><p>15 calendar days. Extended access.</p><a href="https://tbwnsignal.my/#pricing">Start 10 days →</a></article>
+        <article class="featured"><div class="value-callout">12 MORE TRADING DAYS FOR $22 MORE</div><span>DIAMOND</span><h3>22 <small>TRADING DAYS</small></h3><strong>$55 <small style="font:400 12px DM Mono,monospace;color:#9a9a92;text-decoration:line-through">$110</small></strong><p>30 calendar days. Full trading-month access.</p><a href="#contact">Start 22 days →</a></article>
       </div>
     </section>
 
     <section id="contact" class="closing section-pad"><span>TBWN SIGNAL</span><h2>THE MARKET CAN MOVE FAST.<br><em>YOUR DECISION DOESN’T HAVE TO BE RUSHED.</em></h2><a class="button" href="mailto:hello@tbwnsignal.com">Talk to TBWN <span>→</span></a></section>
   </main>
-  <footer><a class="brand" href="#top">TBWN<span>signal</span></a><p>Structured XAUUSD setups. You make the decision.</p><div><a href="#transparency">Risk disclosure</a><a href="#performance">Performance</a><a href="mailto:hello@tbwnsignal.com">Contact</a></div><small>© 2026 TBWN Signal. Trading involves risk.</small></footer>
+  <footer><a class="brand" href="#top"><img src="assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a><p>Structured XAUUSD setups. You make the decision.</p><div><a href="#transparency">Risk disclosure</a><a href="#performance">Performance</a><a href="mailto:hello@tbwnsignal.com">Contact</a></div><small>© 2026 TBWN Signal. Trading involves risk.</small></footer>
   <script>
 const route = new URLSearchParams(location.search).get('from');
 const targets = { wouldyouenter: '#signal', indicator: '#process', proof: '#signal', planfirst: '#process' };
