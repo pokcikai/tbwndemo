@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Alat dalaman TBWN — kira kos dan margin setiap top up Brunei.">
+  <title>Kira Top Up — TBWN (dalaman)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="../assets/site.css">
+<style>
+.kira{max-width:900px;margin:0 auto}
+.warn{display:flex;gap:14px;align-items:flex-start;border:1px solid rgba(212,168,67,.4);background:rgba(212,168,67,.07);border-radius:10px;padding:16px 18px;margin-top:34px}
+.warn b{flex:none;font:500 10px DM Mono,monospace;letter-spacing:.1em;color:#d8b45c;padding-top:2px}
+.warn span{font-size:13px;line-height:1.65;color:#b9bbb1}
+
+.ctrls{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:40px}
+.c label{display:block;font:400 11px DM Mono,monospace;letter-spacing:.06em;color:#9b9d93;margin-bottom:7px}
+.c .box{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:9px;background:#111110;padding:10px 13px}
+.c .box:focus-within{border-color:#d4a843}
+.c .box i{font:400 11px DM Mono,monospace;font-style:normal;color:#7e8076;flex:none}
+.c input{width:100%;min-width:0;border:0;background:transparent;color:#efece3;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;padding:0}
+.c input:focus{outline:none}
+
+.quick{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.quick button{border:1px solid var(--line);background:transparent;color:#efece3;border-radius:999px;padding:8px 15px;font:400 12px DM Mono,monospace;cursor:pointer}
+.quick button:hover{border-color:#d4a843;color:#d8b45c}
+
+.flow{border:1px solid var(--line);border-radius:12px;background:#111110;margin-top:22px;overflow:hidden}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:17px 22px;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .l b{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:-.02em}
+.row .l small{display:block;margin-top:4px;font-size:12px;line-height:1.5;color:#83857b}
+.row .v{text-align:right;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.row .v i{display:block;margin-top:5px;font:400 11px DM Mono,monospace;font-style:normal;color:#7e8076;letter-spacing:.02em}
+.row.head{background:rgba(212,168,67,.07)}
+.row.head .v{font-size:30px;color:#d8b45c}
+.row.out .v{color:#c07a63}
+.row.keep{background:rgba(212,168,67,.07);border-top:1px solid rgba(212,168,67,.45)}
+.row.keep .v{font-size:30px;color:#d8b45c}
+
+.rates{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:22px}
+.rt{border:1px solid var(--line);border-radius:10px;background:#111110;padding:17px 19px}
+.rt span{display:block;font-size:12.5px;line-height:1.45;color:#9b9d93;min-height:2.9em}
+.rt b{display:block;margin-top:9px;font-family:'Plus Jakarta Sans',sans-serif;font-size:27px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.rt.ok{border-color:rgba(212,168,67,.5)} .rt.ok b{color:#d8b45c}
+.rt.bad{border-color:rgba(192,122,99,.55);background:rgba(192,122,99,.08)} .rt.bad b{color:#c07a63}
+
+.tbl{margin-top:22px;border:1px solid var(--line);border-radius:12px;background:#111110;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px}
+th,td{padding:13px 18px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font:500 10px DM Mono,monospace;letter-spacing:.1em;color:#83857b;text-transform:uppercase}
+tbody td{font-family:'Plus Jakarta Sans',sans-serif;font-size:14.5px;font-weight:500;font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:0}
+tbody td.g{color:#d8b45c;font-weight:600}
+
+.said{margin-top:14px;font-size:13px;line-height:1.7;color:#9b9d93}
+.said b{color:#efece3}
+.src{margin:14px 0 0;padding-left:19px;font-size:12.5px;line-height:1.7;color:#83857b}
+.src li{margin-bottom:5px}
+.src b{color:#b9bbb1}
+h2.sub{margin:52px 0 0;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#9b9d93;border-bottom:1px solid var(--line);padding-bottom:12px}
+@media(max-width:600px){
+  .row{padding:15px 16px}
+  .row .v{font-size:18px}
+  .row.head .v,.row.keep .v{font-size:25px}
+}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="TBWN home"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a>
+    <div class="nav-actions">
+      <a class="nav-cta" href="../topup/">Halaman top up</a>
+    </div>
+  </header>
+
+  <main class="section-pad kira">
+    <span class="eyebrow"><i></i>ALAT DALAMAN</span>
+    <h1 style="margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(34px,5vw,58px);font-weight:600;letter-spacing:-.045em;line-height:1.05">Kira Top&nbsp;Up</h1>
+    <p style="max-width:56ch;margin:22px 0 0;font-size:17px;line-height:1.6;color:#b9bbb1">Duit bergerak melalui tiga mata wang sebelum sampai ke akaun MT5 pelanggan. Ubah mana-mana nombor untuk lihat kesannya.</p>
+
+    <div class="warn">
+      <b>DALAMAN</b>
+      <span>Halaman ini memaparkan kos dan margin TBWN. Ia tidak dipaut dari mana-mana halaman lain dan tidak diindeks enjin carian — tetapi sesiapa yang ada URL ini boleh membukanya. Jangan kongsi di luar TBWN.</span>
+    </div>
+
+    <h2 class="sub">Nombor yang boleh diubah</h2>
+    <div class="ctrls">
+      <div class="c"><label for="deposit">Pelanggan nak deposit</label><div class="box"><i>USD</i><input id="deposit" type="number" min="1" step="1" value="50"></div></div>
+      <div class="c"><label for="markup">Markup TBWN</label><div class="box"><input id="markup" type="number" min="0" step="0.5" value="24"><i>%</i></div></div>
+      <div class="c"><label for="disprate">Kadar dipapar di laman</label><div class="box"><i>BND</i><input id="disprate" type="number" min="0.5" step="0.01" value="1.50"></div></div>
+      <div class="c"><label for="costrate">Kos TBWN beli USD</label><div class="box"><i>MYR</i><input id="costrate" type="number" min="1" step="0.01" value="4.20"></div></div>
+      <div class="c"><label for="mkt">Kadar pasaran USD→BND</label><div class="box"><i>BND</i><input id="mkt" type="number" min="0.5" step="0.0001" value="1.2793"></div></div>
+      <div class="c"><label for="myr">Kadar Stripe USD→MYR</label><div class="box"><i>MYR</i><input id="myr" type="number" min="1" step="0.0001" value="4.0794"></div></div>
+      <div class="c"><label for="fee">Yuran Stripe</label><div class="box"><input id="fee" type="number" min="0" step="0.1" value="6"><i>%+RM1</i></div></div>
+      <div class="c"><label for="bank">Spread bank pelanggan</label><div class="box"><input id="bank" type="number" min="0" step="0.5" value="2"><i>%</i></div></div>
+    </div>
+    <div class="quick">
+      <button type="button" data-set="20">Pakej USD 20</button>
+      <button type="button" data-set="50">Pakej USD 50</button>
+      <button type="button" data-set="100">Pakej USD 100</button>
+      <button type="button" id="reset">Set semula</button>
+    </div>
+
+    <h2 class="sub">Perjalanan duit</h2>
+    <div class="flow">
+      <div class="row head">
+        <div class="l"><b>Pelanggan bayar</b><small>Apa yang bank Brunei dia potong sebenarnya</small></div>
+        <div class="v"><span id="payBnd">BND 81</span><i id="payQuote">laman papar BND 93</i></div>
+      </div>
+      <div class="row">
+        <div class="l"><b>Kad dicaj</b><small>Stripe caj dalam USD — inilah yang muncul di skrin bayaran dan penyata kad</small></div>
+        <div class="v"><span id="charged">USD 62.00</span></div>
+      </div>
+      <div class="row">
+        <div class="l"><b>Masuk Stripe (kasar)</b><small id="grossNote">Stripe tukar ke MYR pada 4.0794</small></div>
+        <div class="v"><span id="gross">MYR 252.92</span></div>
+      </div>
+      <div class="row out">
+        <div class="l"><b>Yuran Stripe</b><small id="feeNote">6% + RM 1.00</small></div>
+        <div class="v"><span id="feeVal">−MYR 16.18</span><i id="feePct">6.4% daripada kasar</i></div>
+      </div>
+      <div class="row out">
+        <div class="l"><b>Kos beli USD untuk deposit</b><small id="costNote">USD 50 pada kadar MYR 4.20</small></div>
+        <div class="v"><span id="costVal">−MYR 210.00</span></div>
+      </div>
+      <div class="row keep">
+        <div class="l"><b>Baki TBWN</b><small>Sebelum kos deposit ke broker, kalau ada</small></div>
+        <div class="v"><span id="keep">MYR 26.75</span><i id="keepPct">12.7% atas kos</i></div>
+      </div>
+    </div>
+    <p class="said" id="bepNote"><b>Titik pulang modal:</b> markup 10.0%. Di bawah itu TBWN rugi setiap kali.</p>
+
+    <h2 class="sub">Tiga kadar yang wujud sekarang</h2>
+    <div class="rates">
+      <div class="rt ok"><span>Kadar jualan yang TBWN niat</span><b id="rateIntent">BND 1.50</b></div>
+      <div class="rt"><span>Kadar yang pelanggan betul-betul bayar</span><b id="rateActual">BND 1.62</b></div>
+      <div class="rt bad"><span>Kadar yang laman beritahu dia</span><b id="rateQuoted">BND 1.86</b></div>
+    </div>
+    <p class="said" id="gapNote"></p>
+
+    <h2 class="sub">Tiga pakej, markup semasa</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Deposit</th><th>Pelanggan bayar</th><th>Kad dicaj</th><th>Bersih Stripe</th><th>Kos USD</th><th>Baki TBWN</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <p class="said">RM 1.00 tetap dalam yuran Stripe menghukum jumlah kecil — deposit kecil sentiasa margin paling nipis.</p>
+
+    <h2 class="sub">Dari mana angka ni</h2>
+    <ul class="src">
+      <li><b>Yuran Stripe 6% + RM 1.00</b> — dikira daripada 25 transaksi sebenar akaun TBWN, 11–24 Sep 2026. Sebahagian kad keluar 5% + RM1.</li>
+      <li><b>Kadar Stripe USD→MYR</b> — Stripe tukar pada kadar pasaran; disahkan 4.0796 (Stripe) lawan 4.0794 (pasaran) pada 24 Sep 2026. Tiada spread tersembunyi.</li>
+      <li><b>USD 1 masuk = RM 3.82 bersih</b> — transaksi USD 55 sebenar: kasar MYR 224.83, yuran MYR 14.49, bersih MYR 210.34.</li>
+      <li><b>Kadar pasaran USD→BND 1.2793</b> — BND terpaut 1:1 dengan SGD, 24 Sep 2026.</li>
+      <li><b>Kos beli USD MYR 4.20</b> — angka yang Pokcik beri. Belum termasuk kos deposit ke broker, kalau ada.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <a class="brand" href="../"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a>
+    <p>Alat dalaman. Kadar tukaran berubah setiap hari — semak semula sebelum jadikan asas keputusan harga.</p>
+    <div><a href="../topup/">Halaman top up</a><a href="../">Laman utama</a></div>
+    <small>© 2026 TBWN Signal · dikemas kini 24 Sep 2026</small>
+  </footer>
+
+<script>
+var F={deposit:'deposit',markup:'markup',disprate:'disprate',costrate:'costrate',mkt:'mkt',myr:'myr',fee:'fee',bank:'bank'};
+Object.keys(F).forEach(function(k){F[k]=document.getElementById(F[k]);});
+var D={deposit:50,markup:24,disprate:1.50,costrate:4.20,mkt:1.2793,myr:4.0794,fee:6,bank:2};
+var $=function(id){return document.getElementById(id);};
+
+function n(el,fb){var v=parseFloat(el.value);return isFinite(v)?v:fb;}
+function money(cur,v,dp){if(dp===undefined)dp=2;
+  return cur+' '+v.toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+
+// Satu kiraan, dipakai oleh kad utama dan jadual pakej.
+function calc(deposit,p){
+  var charged=deposit*(1+p.markup/100);
+  var bankRate=p.mkt*(1+p.bank/100);       // kadar bank pelanggan, bukan kadar pasaran
+  var payBnd=charged*bankRate;             // yang betul-betul dipotong
+  var quotedBnd=charged*p.disprate;        // yang laman papar
+  var gross=charged*p.myr;
+  var fee=gross*(p.fee/100)+1;
+  var net=gross-fee;
+  var cost=deposit*p.costrate;
+  var keep=net-cost;
+  return {charged:charged,payBnd:payBnd,quotedBnd:quotedBnd,gross:gross,fee:fee,net:net,
+    cost:cost,keep:keep,keepPct:cost>0?keep/cost*100:0,feePct:gross>0?fee/gross*100:0};
+}
+
+// Markup di mana baki = 0, untuk deposit ini.
+function breakEven(deposit,p){
+  var k=p.myr*(1-p.fee/100);
+  if(k<=0||deposit<=0)return null;
+  return ((deposit*p.costrate+1)/(deposit*k)-1)*100;
+}
+
+function render(){
+  var p={markup:n(F.markup,0),disprate:n(F.disprate,D.disprate),costrate:n(F.costrate,D.costrate),
+    mkt:n(F.mkt,D.mkt),myr:n(F.myr,D.myr),fee:n(F.fee,D.fee),bank:n(F.bank,D.bank)};
+  var deposit=Math.max(0,n(F.deposit,0));
+  var r=calc(deposit,p);
+
+  $('payBnd').textContent=money('BND',r.payBnd,0);
+  $('payQuote').textContent='laman papar '+money('BND',r.quotedBnd,0);
+  $('charged').textContent=money('USD',r.charged);
+  $('gross').textContent=money('MYR',r.gross);
+  $('grossNote').textContent='Stripe tukar ke MYR pada '+p.myr.toFixed(4);
+  $('feeVal').textContent='−'+money('MYR',r.fee);
+  $('feeNote').textContent=p.fee+'% + RM 1.00';
+  $('feePct').textContent=r.feePct.toFixed(1)+'% daripada kasar';
+  $('costVal').textContent='−'+money('MYR',r.cost);
+  $('costNote').textContent=money('USD',deposit,0)+' pada kadar MYR '+p.costrate.toFixed(2);
+  $('keep').textContent=money('MYR',r.keep);
+  $('keepPct').textContent=r.keepPct.toFixed(1)+'% atas kos';
+  var neg=r.keep<0?'#c07a63':'';
+  $('keep').style.color=neg; $('keepPct').style.color=neg;
+
+  var be=breakEven(deposit,p);
+  $('bepNote').innerHTML=be===null
+    ?'<b>Titik pulang modal:</b> masukkan jumlah deposit.'
+    :'<b>Titik pulang modal:</b> markup '+be.toFixed(1)+'%. Di bawah itu TBWN rugi setiap kali.';
+
+  $('rateIntent').textContent=money('BND',p.disprate,2);
+  $('rateActual').textContent=deposit>0?money('BND',r.payBnd/deposit,2):'—';
+  $('rateQuoted').textContent=deposit>0?money('BND',r.quotedBnd/deposit,2):'—';
+  // Nota ini mesti benar untuk apa-apa input, bukan hanya tetapan lalai:
+  // kalau kadar papar hampir kadar pasaran, tiada markup bertindih untuk dikecam.
+  var spread=(p.disprate/p.mkt-1)*100;
+  var quoted=deposit>0?money('BND',r.quotedBnd/deposit,2):'—';
+  $('gapNote').innerHTML = spread>2
+    ? 'Laman quote <b>'+quoted+'</b> kerana markup dikenakan dua kali: jumlah USD dinaikkan '+
+      p.markup+'%, kemudian didarab lagi dengan '+p.disprate.toFixed(2)+
+      ' yang sendirinya sudah '+spread.toFixed(0)+'% atas kadar pasaran. Pelanggan tak pernah bayar jumlah itu.'
+    : 'Kadar papar '+p.disprate.toFixed(2)+' hampir sama dengan kadar pasaran, jadi jumlah yang '+
+      'dipapar padan dengan jumlah yang pelanggan betul-betul bayar. Markup dikenakan sekali sahaja.';
+
+  var rows='';
+  [20,50,100].forEach(function(d){
+    var x=calc(d,p);
+    rows+='<tr><td>'+money('USD',d,0)+'</td><td>'+money('BND',x.payBnd,0)+'</td><td>'+
+      money('USD',x.charged)+'</td><td>'+money('MYR',x.net)+'</td><td>'+money('MYR',x.cost)+
+      '</td><td class="g">'+money('MYR',x.keep)+' · '+x.keepPct.toFixed(1)+'%</td></tr>';
+  });
+  $('tbody').innerHTML=rows;
+}
+
+Object.keys(F).forEach(function(k){F[k].addEventListener('input',render);});
+Array.prototype.forEach.call(document.querySelectorAll('.quick button[data-set]'),function(b){
+  b.addEventListener('click',function(){F.deposit.value=b.dataset.set;render();});
+});
+$('reset').addEventListener('click',function(){
+  Object.keys(D).forEach(function(k){F[k].value=D[k];});render();
+});
+render();
+</script>
+</body>
+</html>
