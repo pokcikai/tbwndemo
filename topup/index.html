@@ -28,6 +28,8 @@
 .bill dd{margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .bill .total{border-bottom:0;padding-top:20px}
 .bill .total dd{font-size:34px;color:#d8b45c}
+.bill .total dt small{display:block;margin-top:6px;letter-spacing:.04em;color:#7e8076}
+.bill .proc{margin-top:8px;color:#7e8076}
 .bill dl{margin:22px 0 0}
 .rate{margin-top:18px;font-size:12.5px;line-height:1.7;color:#9b9d93}
 .brunei{display:flex;gap:11px;align-items:flex-start;margin-top:26px;border:1px solid rgba(212,168,67,.4);background:rgba(212,168,67,.07);border-radius:8px;padding:15px 17px}
@@ -104,10 +106,10 @@
           <dl>
             <div><dt>PAKEJ</dt><dd id="pkg">USD 50</dd></div>
             <div><dt>HARI AKSES</dt><dd id="pkgDays">14 hari</dd></div>
-            <div><dt>CAJ PERKHIDMATAN</dt><dd id="fee">USD 12.00</dd></div>
-            <div class="total"><dt>ANDA AKAN DICAJ</dt><dd id="total">USD 62.00</dd></div>
+            <div class="total"><dt>ANGGARAN JUMLAH<small>termasuk caj perkhidmatan</small></dt><dd id="total">BND 75</dd></div>
           </dl>
-          <p class="rate">Anggaran <b id="bnd">BND 93</b> pada kadar 1 USD ≈ 1.5 BND. Caj sebenar dalam USD, tertakluk kadar pertukaran harian bank anda.</p>
+          <p class="rate">Kadar TBWN: 1 USD = <b>BND 1.50</b>.<br>*Tertakluk kadar pertukaran harian bank anda.</p>
+          <p class="rate proc" id="inusd">Bayaran diproses dalam USD — lebih kurang USD 58.63.</p>
           <div class="brunei"><b>BRUNEI SAHAJA</b><span>Top up ini untuk account holder Brunei Darussalam. Untuk pakej signal biasa, guna halaman pakej.</span></div>
         </aside>
       </div>
@@ -124,11 +126,13 @@
   <footer><a class="brand" href="../"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a><p>Structured XAUUSD setups. You make the decision.</p><div><a href="../#transparency">Risk disclosure</a><a href="../membership/">Membership</a><a href="./">Top up (Brunei)</a><a href="../access/">Member log in</a><a href="mailto:hello@tbwnsignal.com">Contact</a></div><small>© 2026 TBWN Signal. Trading involves risk.</small></footer>
 
 <script>
-// Charge = base × 1.24 (Stripe fees + FX + operations), the same rate the live
-// checkout uses. The BND figure is an estimate at 1 USD ≈ 1.5 BND; the card is
-// always charged in USD.
-const MARKUP = 1.24;
-const USD_TO_BND = 1.5;
+// Kadar jualan TBWN: 1 USD deposit = BND 1.50, dikenakan SEKALI atas harga
+// pakej. Caj perkhidmatan sudah ada DALAM kadar itu — jangan tambah markup
+// berasingan di atasnya, itu mengenakan dua kali (Snid, 24 Sep 2026).
+// Kad tetap dicaj dalam USD; nilai USD diterbitkan semula daripada BND supaya
+// yang dipapar dan yang dicaj sentiasa jumlah yang sama.
+const SELL_BND = 1.5;      // kadar jualan, BND per USD deposit
+const USD_BND  = 1.2793;   // kadar pasaran USD->BND, untuk anggar USD dicaj
 const usd = (n) => 'USD ' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 const tiers = document.querySelectorAll('.tier');
@@ -145,13 +149,14 @@ const readOrder = () => {
 
 const render = () => {
   const { amount, days } = readOrder();
-  const fee = amount * (MARKUP - 1);
-  const total = amount * MARKUP;
+  const totalBnd = amount * SELL_BND;        // harga pelanggan, dalam BND
+  const chargedUsd = totalBnd / USD_BND;     // jumlah sama, dalam USD yang Stripe caj
   document.getElementById('pkg').textContent = amount ? usd(amount) : '—';
   document.getElementById('pkgDays').textContent = days ? days + ' hari' : '—';
-  document.getElementById('fee').textContent = amount ? usd(fee) : '—';
-  document.getElementById('total').textContent = amount ? usd(total) : '—';
-  document.getElementById('bnd').textContent = 'BND ' + Math.round(total * USD_TO_BND);
+  document.getElementById('total').textContent = amount
+    ? 'BND ' + Math.round(totalBnd).toLocaleString('en-US') : '—';
+  document.getElementById('inusd').textContent = amount
+    ? 'Bayaran diproses dalam USD — lebih kurang ' + usd(chargedUsd) + '.' : '';
 };
 
 tiers.forEach((btn) => {
