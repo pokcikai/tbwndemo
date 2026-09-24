@@ -230,11 +230,16 @@ function render(){
   $('rateIntent').textContent=money('BND',p.disprate,2);
   $('rateActual').textContent=deposit>0?money('BND',r.payBnd/deposit,2):'—';
   $('rateQuoted').textContent=deposit>0?money('BND',r.quotedBnd/deposit,2):'—';
+  // Nota ini mesti benar untuk apa-apa input, bukan hanya tetapan lalai:
+  // kalau kadar papar hampir kadar pasaran, tiada markup bertindih untuk dikecam.
   var spread=(p.disprate/p.mkt-1)*100;
-  $('gapNote').innerHTML='Laman quote <b>'+(deposit>0?money('BND',r.quotedBnd/deposit,2):'—')+
-    '</b> kerana markup dikenakan dua kali: jumlah USD dinaikkan '+p.markup+
-    '%, kemudian didarab lagi dengan '+p.disprate.toFixed(2)+' yang sendirinya sudah '+
-    spread.toFixed(0)+'% atas kadar pasaran. Pelanggan tak pernah bayar jumlah itu.';
+  var quoted=deposit>0?money('BND',r.quotedBnd/deposit,2):'—';
+  $('gapNote').innerHTML = spread>2
+    ? 'Laman quote <b>'+quoted+'</b> kerana markup dikenakan dua kali: jumlah USD dinaikkan '+
+      p.markup+'%, kemudian didarab lagi dengan '+p.disprate.toFixed(2)+
+      ' yang sendirinya sudah '+spread.toFixed(0)+'% atas kadar pasaran. Pelanggan tak pernah bayar jumlah itu.'
+    : 'Kadar papar '+p.disprate.toFixed(2)+' hampir sama dengan kadar pasaran, jadi jumlah yang '+
+      'dipapar padan dengan jumlah yang pelanggan betul-betul bayar. Markup dikenakan sekali sahaja.';
 
   var rows='';
   [20,50,100].forEach(function(d){
