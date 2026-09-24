@@ -106,10 +106,10 @@
           <dl>
             <div><dt>PAKEJ</dt><dd id="pkg">USD 50</dd></div>
             <div><dt>HARI AKSES</dt><dd id="pkgDays">14 hari</dd></div>
-            <div class="total"><dt>ANGGARAN JUMLAH<small>termasuk caj perkhidmatan</small></dt><dd id="total">BND 93</dd></div>
+            <div class="total"><dt>ANGGARAN JUMLAH<small>termasuk caj perkhidmatan</small></dt><dd id="total">BND 75</dd></div>
           </dl>
-          <p class="rate">Anggaran kadar pertukaran USD/BND ≈ <b>1.50</b>.<br>*Tertakluk kadar pertukaran harian bank anda.</p>
-          <p class="rate proc">Bayaran diproses dalam USD.</p>
+          <p class="rate">Kadar TBWN: 1 USD = <b>BND 1.50</b>.<br>*Tertakluk kadar pertukaran harian bank anda.</p>
+          <p class="rate proc" id="inusd">Bayaran diproses dalam USD — lebih kurang USD 58.63.</p>
           <div class="brunei"><b>BRUNEI SAHAJA</b><span>Top up ini untuk account holder Brunei Darussalam. Untuk pakej signal biasa, guna halaman pakej.</span></div>
         </aside>
       </div>
@@ -126,13 +126,13 @@
   <footer><a class="brand" href="../"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a><p>Structured XAUUSD setups. You make the decision.</p><div><a href="../#transparency">Risk disclosure</a><a href="../membership/">Membership</a><a href="./">Top up (Brunei)</a><a href="../access/">Member log in</a><a href="mailto:hello@tbwnsignal.com">Contact</a></div><small>© 2026 TBWN Signal. Trading involves risk.</small></footer>
 
 <script>
-// Charge = base × 1.24 (Stripe fees + FX + operations), the same rate the live
-// checkout uses. The summary deliberately shows ONE number, in BND: Brunei buyers
-// think in BND, and showing USD62 beside BND93 made them ask which one is real
-// (Snid, 24 Sep 2026). The card is still charged in USD — hence the one line of
-// small print, so nobody is surprised by the currency on the Stripe page.
-const MARKUP = 1.24;
-const USD_TO_BND = 1.5;
+// Kadar jualan TBWN: 1 USD deposit = BND 1.50, dikenakan SEKALI atas harga
+// pakej. Caj perkhidmatan sudah ada DALAM kadar itu — jangan tambah markup
+// berasingan di atasnya, itu mengenakan dua kali (Snid, 24 Sep 2026).
+// Kad tetap dicaj dalam USD; nilai USD diterbitkan semula daripada BND supaya
+// yang dipapar dan yang dicaj sentiasa jumlah yang sama.
+const SELL_BND = 1.5;      // kadar jualan, BND per USD deposit
+const USD_BND  = 1.2793;   // kadar pasaran USD->BND, untuk anggar USD dicaj
 const usd = (n) => 'USD ' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 const tiers = document.querySelectorAll('.tier');
@@ -149,11 +149,14 @@ const readOrder = () => {
 
 const render = () => {
   const { amount, days } = readOrder();
-  const charged = amount * MARKUP;                    // yang Stripe caj, dalam USD
-  const totalBnd = Math.round(charged * USD_TO_BND);  // yang pembeli nampak, dalam BND
+  const totalBnd = amount * SELL_BND;        // harga pelanggan, dalam BND
+  const chargedUsd = totalBnd / USD_BND;     // jumlah sama, dalam USD yang Stripe caj
   document.getElementById('pkg').textContent = amount ? usd(amount) : '—';
   document.getElementById('pkgDays').textContent = days ? days + ' hari' : '—';
-  document.getElementById('total').textContent = amount ? 'BND ' + totalBnd.toLocaleString('en-US') : '—';
+  document.getElementById('total').textContent = amount
+    ? 'BND ' + Math.round(totalBnd).toLocaleString('en-US') : '—';
+  document.getElementById('inusd').textContent = amount
+    ? 'Bayaran diproses dalam USD — lebih kurang ' + usd(chargedUsd) + '.' : '';
 };
 
 tiers.forEach((btn) => {
