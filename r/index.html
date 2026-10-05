@@ -68,7 +68,7 @@
   <header class="site-header">
     <a class="brand" href="../" aria-label="TBWN home"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a>
     <nav aria-label="Main navigation">
-      <a href="../#signal">Real signal</a><a href="../#process">How it works</a><a href="../membership/">Membership</a><a href="../topup/">Top up (Brunei)</a>
+      <a href="../#signal">Real signal</a><a href="../#process">How it works</a><a href="../membership/">Membership</a><a href="../topup/">Purchase access (Brunei)</a>
     </nav>
     <div class="nav-actions">
       <a class="nav-cta" href="../#plans">View plans</a>
@@ -90,13 +90,14 @@
       <aside class="summary">
         <span>YOUR PACKAGE</span>
         <h2 id="planName">Diamond</h2>
-        <p class="days" id="planDays">22 trading days · 30 calendar days</p>
+        <p class="days" id="planDays">up to 22 trading days · 30 calendar days</p>
         <div class="price"><strong id="planPrice">$55</strong><s id="planWas">$110</s><em>50% OFF</em></div>
         <ul>
           <li>Every XAUUSD setup with entry, stop loss and TP1–TP3</li>
           <li>Scalping and intraday, on market days</li>
           <li>Risk planner and the full performance record</li>
-          <li>One-time payment — no auto-renew, no recurring charge</li>
+          <li>Promotional price shown, with the regular price struck through; valid from activation for the calendar days listed</li>
+          <li>One-time payment: no auto-renew, no recurring charge</li>
         </ul>
         <div class="switch-plan">
           <a href="?plan=emerald" data-plan="emerald">Emerald</a>
@@ -178,13 +179,13 @@
     </div>
   </div>
 
-  <footer><a class="brand" href="../"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a><p>Structured XAUUSD setups. You make the decision.</p><div><a href="../#transparency">Risk disclosure</a><a href="../membership/">Membership</a><a href="../access/">Member log in</a><a href="mailto:hello@tbwnsignal.com">Contact</a></div><small>© 2026 TBWN Signal. Trading involves risk.</small></footer>
+  <footer><a class="brand" href="../"><img src="../assets/tbwn-logo-nav.png" alt=""> TBWN<span>signal</span></a><p>Structured XAUUSD setups. You make the decision.</p><div><a href="../risk/">Risk disclosure</a><a href="../terms/">Terms</a><a href="../privacy/">Privacy</a><a href="../refund/">Refund policy</a><a href="../methodology/">Performance methodology</a><a href="../affiliate/">Affiliate disclosure</a><a href="../membership/">Membership</a><a href="../access/">Member log in</a><a href="mailto:support@tbwnsignal.my">Contact</a></div><small>© 2026 TBWN Signal. Trading involves risk. Past results are not a promise of future ones. Results are based on TBWN records and are not independently audited.</small></footer>
 
 <script>
 const PLANS = {
   emerald:  { name: 'Emerald',  days: '5 trading days · 7 calendar days',   price: '$17', was: '$34',  expires: '30 September 2026' },
-  sapphire: { name: 'Sapphire', days: '10 trading days · 15 calendar days', price: '$33', was: '$66',  expires: '8 October 2026' },
-  diamond:  { name: 'Diamond',  days: '22 trading days · 30 calendar days', price: '$55', was: '$110', expires: '23 October 2026' },
+  sapphire: { name: 'Sapphire', days: 'up to 11 trading days · 15 calendar days', price: '$33', was: '$66',  expires: '8 October 2026' },
+  diamond:  { name: 'Diamond',  days: 'up to 22 trading days · 30 calendar days', price: '$55', was: '$110', expires: '23 October 2026' },
 };
 const which = new URLSearchParams(location.search).get('plan');
 const plan = PLANS[which] || PLANS.diamond;
