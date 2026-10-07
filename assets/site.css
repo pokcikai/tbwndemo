@@ -31,7 +31,7 @@ body{font-family:'DM Sans',Arial,sans-serif}
 body{background:var(--paper);color:#efece3}
 .site-header{background:rgba(14,14,14,.9);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:9px}
-.brand img{height:26px;width:auto;display:block}
+.brand img{height:30px;width:auto;display:block}
 .brand span{color:#d4a843;font-family:'DM Sans',sans-serif;font-style:normal;font-weight:500}
 .eyebrow i{background:#d4a843;box-shadow:0 0 0 5px rgba(212,168,67,.16)}
 .hero h1 em,.section-intro h2 em,.closing h2 em{color:#d8b45c}
